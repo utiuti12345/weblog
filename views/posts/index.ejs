@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Welcome Page</title>
+
+  <%- include("../_share/stylesheets.ejs") %>
+</head>
+
+<body>
+
+  <%- include("../_share/navbar.ejs") %>
+  <main role="main" class="container">
+
+    <div class="border-bottom mt-5 mb-5">
+      <h1><%= title %></h1>
+    </div>
+    <dl class="row mt-5 mb-5">
+      <dt class="col-3">公開日：</dt>
+      <dt class="col-9"><%= published.toLocaleString() %></dt>
+      <dt class="col-3">著者：</dt>
+      <dt class="col-9"><%= authors %></dt>
+      <dt class="col-3">キーワード：</dt>
+      <dt class="col-9"><%= keywords %></dt>
+    </dl>
+      <p class="lead"><%= content %></p>
+
+  </main>
+  <%- include("../_share/javascripts.ejs") %>
+</body>
+
+</html>
