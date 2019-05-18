@@ -16,58 +16,52 @@
   <main role="main" class="container">
 
     <div class="border-bottom mt-5 mb-5">
-      <h1>新規記事登録画面</h1>
+      <h1>新規記事確認画面</h1>
     </div>
 
     <form>
-      <%
-        var errors = locals.errors || {};
-        var original = locals.original || {};
-      %>
-      <% if (locals.errors){ %>
-      <div class="alert alert-danger">
-        <% for(var key in errors){ %>
-        <div><i class="fa fa-exclamation-circle fa-fw mr-2"></i><%= errors[key] %></div>
-        <% } %>
-      </div>
-      <% } %>
       <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">URL:</label>
         <div class="col-sm-10">
-          <input class="form-control <%= errors.url ? 'is-invalid' : '' %>" type="text" id="url" name="url"
-            value="<%=original.url%>" />
+          <input class="form-control-plaintext" readonly type="text" id="url" name="url" value="<%=original.url%>" />
         </div>
       </div>
       <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">タイトル:</label>
         <div class="col-sm-10">
-          <input class="form-control <%= errors.title ? 'is-invalid' : '' %>" type="text" id="title" name="title"
+          <input class="form-control-plaintext" readonly type="text" id="title" name="title"
             value="<%=original.title%>" />
         </div>
       </div>
       <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">本文:</label>
         <div class="col-sm-10">
-          <textarea class="form-control" type="text" id="content" name="content" rows="6"><%=original.content%></textarea>
+          <textarea class="form-control-plaintext" readonly id="content" name="content" rows="6"><%=original.content%></textarea>
         </div>
       </div>
       <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">キーワード:</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" id="keywords" name="keywords" value="<%=original.keywords%>" />
+          <input class="form-control-plaintext" readonly type="text" id="keywords" name="keywords"
+            value="<%=original.keywords%>" />
         </div>
       </div>
       <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">著者:</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" id="authors" name="authors" value="<%=original.authors%>" />
+          <input class="form-control-plaintext" readonly type="text" id="authors" name="authors"
+            value="<%=original.authors%>" />
         </div>
       </div>
       <div class="form-group row">
         <div for="" class="col-sm-2"></div>
-        <div class="col-sm-10">
-          <input class="btn btn-primary" type="submit" data-method="POST" data-action="/account/posts/regist/confirm"
-            value="確認" />
+        <div class="col-sm-1">
+          <input class="btn btn-primary" type="submit" data-method="POST" data-action="/account/posts/regist/execute"
+            value="登録" />
+        </div>
+        <div class="col-sm-1">
+          <input class="btn btn-secondary" type="submit" data-method="POST" data-action="/account/posts/regist/input"
+            value="戻る" />
         </div>
       </div>
     </form>
