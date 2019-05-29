@@ -52,6 +52,11 @@ router.get("/login", (req, res) => {
   res.render("./account/login.ejs", { message: req.flash("message") });
 });
 
+router.post("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/account/login");
+});
+
 router.post("/login", authenticate());
 
 router.get("/posts/regist", authorize("readWrite"), (req, res) => {

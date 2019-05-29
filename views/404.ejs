@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>404: Not Found</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+
+  <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+
+  <%- include("./_share/navbar.ejs") %>
+  <main role="main" class="container">
+
+    <div class="border-bottom mt-5 mb-5">
+      <h1>404: Not Found</h1>
+    </div>
+    <h2></h2>
+    <table class="table table-bordered">
+      <colgroup>
+        <col style="width: 30%">
+        <col style="width: 70%">
+      </colgroup>
+      <tr>
+        <th>リクエスト</th>
+        <td>
+          <span><%=data.method%></span>
+          <span>&nbsp;</span>
+          <span><%=data.url%></span>
+          <span>&nbsp;</span>
+          <span><%=(data.protocol || "").toUpperCase() %> <%= data.version %></span>
+        </td>
+      </tr>
+    </table>
+  </main>
+  <%- include("./_share/javascripts.ejs") %>
+</body>
+
+</html>
