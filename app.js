@@ -8,6 +8,7 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("connect-flash");
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.disable("x-powered-by");
@@ -86,4 +87,4 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(3000);
+app.listen(port);
