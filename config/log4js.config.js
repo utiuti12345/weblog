@@ -13,7 +13,7 @@ module.exports = {
       bakups: 10
     },
     MultiFileLogAppender: {
-      type: "multifile",
+      type: "multiFile",
       base: path.join(ROOT, "./log/application/"),
       property: "key",
       extension: ".log"
